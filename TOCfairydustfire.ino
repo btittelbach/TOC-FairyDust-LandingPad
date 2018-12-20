@@ -60,12 +60,22 @@ uint16_t light_level=0;
 
 #include "animations.h"
 
+AnimationBlackSleepESP8266 anim_sleep_off(3);
 AnimationConfetti anim_confetti;
 AnimationTOCFairyDustFire anim_toc;
+AnimationTOCFairyDustFire2 anim_toc2;
 AnimationRainbowGlitter anim_rainbow;
+AnimationFireRing anim_firering;
 
 std::vector<BaseAnimation*> animations_list_=
-	{&anim_toc, &anim_rainbow, &anim_confetti };
+	{
+    &anim_toc,
+    &anim_toc2,
+    &anim_firering,
+    &anim_confetti,
+    &anim_rainbow,
+    &anim_sleep_off
+  };
 
 uint8_t animation_current_= 0;
 #define NUM_ANIM animations_list_.size()
