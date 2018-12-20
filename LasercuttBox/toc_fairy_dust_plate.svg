@@ -23,9 +23,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="1018.4547"
-     inkscape:cy="698.12949"
+     inkscape:zoom="2.8"
+     inkscape:cx="1112.1799"
+     inkscape:cy="671.46511"
      inkscape:document-units="mm"
      inkscape:current-layer="svg8"
      showgrid="false"
@@ -147,30 +147,6 @@
      inkscape:label="part"
      style="fill:none;stroke:#000000"
      d="m 128.29389,123.60412 h -8.7725 v -3 h -6.83 v 3 h -8.8575 v -3 h -6.829996 v 3 h -8.8575 v -3 h -6.83 v 3 h -8.8575 v -3 h -6.83 v 3 h -8.8575 v -3 h -6.83 v 3 h -8.8575 l 0,-3 h -6.83 l 0,3 h -8.8575 l 0,-3 h -6.83 v 3 h -8.7725" />
-  <path
-     d="m 277.84412,123.60412 v -8.6025 h -3 v -7.17 h 3 v -8.517498 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.6025"
-     style="fill:none;stroke:#000000"
-     inkscape:label="part"
-     id="path80"
-     inkscape:connector-curvature="0" />
-  <path
-     d="m 277.84412,5.104122 h 6.585 v 3 h 6.83 v -3 h 6.585"
-     style="fill:none;stroke:#000000"
-     inkscape:label="part"
-     id="path82"
-     inkscape:connector-curvature="0" />
-  <path
-     d="m 297.84412,5.104122 v 8.6025 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 l -3,0 v 8.517498 h 3 v 7.17 l -3,0 v 8.6025"
-     style="fill:none;stroke:#000000"
-     inkscape:label="part"
-     id="path84"
-     inkscape:connector-curvature="0" />
-  <path
-     d="m 297.84412,123.60412 h -6.585 v -3 h -6.83 v 3 h -6.585"
-     style="fill:none;stroke:#000000"
-     inkscape:label="part"
-     id="path86"
-     inkscape:connector-curvature="0" />
   <path
      d="m 158.84391,147.10412 v -6.415 h -3 v -7.17 h 3 v -6.415"
      style="fill:none;stroke:#000000"
@@ -516,5 +492,37 @@
          x="89.766304"
          y="169.21729"
          style="font-size:28px;line-height:1.25;font-family:sans-serif;fill:none;stroke:#ff0000;stroke-width:2.79717159"> </tspan></text>
+  </g>
+  <g
+     id="g99">
+    <path
+       inkscape:connector-curvature="0"
+       id="path80"
+       inkscape:label="part"
+       style="fill:none;stroke:#000000"
+       d="m 277.84412,123.60412 v -8.6025 h -3 v -7.17 h 3 v -8.517498 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.5175 h -3 v -7.17 h 3 v -8.6025" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path82"
+       inkscape:label="part"
+       style="fill:none;stroke:#000000"
+       d="m 277.84412,5.104122 h 6.585 v 3 h 6.83 v -3 h 6.585" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path84"
+       inkscape:label="part"
+       style="fill:none;stroke:#000000"
+       d="m 297.84412,5.104122 v 8.6025 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 h -3 v 8.5175 h 3 v 7.17 l -3,0 v 8.517498 h 3 v 7.17 l -3,0 v 8.6025" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path86"
+       inkscape:label="part"
+       style="fill:none;stroke:#000000"
+       d="m 297.84412,123.60412 h -6.585 v -3 h -6.83 v 3 h -6.585" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path285"
+       d="m 293.64412,95.987929 a 5.8000002,5.8000002 0 0 1 -5.8,5.799981 5.8000002,5.8000002 0 0 1 -5.8,-5.799981 5.8000002,5.8000002 0 0 1 5.8,-5.8 5.8000002,5.8000002 0 0 1 5.8,5.8 z"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
   </g>
 </svg>
