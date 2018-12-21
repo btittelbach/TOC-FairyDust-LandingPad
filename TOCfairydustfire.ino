@@ -60,7 +60,7 @@ uint16_t light_level=0;
 
 #include "animations.h"
 
-AnimationBlackSleepESP8266 anim_sleep_off(3);
+AnimationBlackSleepESP8266 anim_sleep_off(BUTTON_PIN);
 AnimationConfetti anim_confetti;
 AnimationTOCFairyDustFire anim_toc;
 AnimationTOCFairyDustFire2 anim_toc2;
