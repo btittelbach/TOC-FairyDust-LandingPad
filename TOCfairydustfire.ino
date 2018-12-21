@@ -64,11 +64,13 @@ AnimationBlackSleepESP8266 anim_sleep_off(BUTTON_PIN);
 AnimationConfetti anim_confetti;
 AnimationTOCFairyDustFire anim_toc;
 AnimationTOCFairyDustFire2 anim_toc2;
+AnimationTOCFairyDustLandingRing anim_landing;
 AnimationRainbowGlitter anim_rainbow;
 AnimationFireRing anim_firering;
 
 std::vector<BaseAnimation*> animations_list_=
 	{
+    &anim_landing,
     &anim_toc,
     &anim_toc2,
     &anim_firering,
