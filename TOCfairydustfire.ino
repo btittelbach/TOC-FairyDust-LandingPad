@@ -63,16 +63,24 @@ uint16_t light_level=0;
 AnimationBlackSleepESP8266 anim_sleep_off(BUTTON_PIN);
 AnimationConfetti anim_confetti;
 AnimationTOCFairyDustFire anim_toc;
-AnimationTOCFairyDustFire2 anim_toc2;
+// AnimationTOCFairyDustFire2 anim_toc2;
 AnimationTOCFairyDustLandingRing anim_landing;
 AnimationRainbowGlitter anim_rainbow;
 AnimationFireRing anim_firering;
 
-std::vector<BaseAnimation*> animations_list_=
-	{
+std::vector<BaseAnimation*> fairy_dust_list =
+  {
     &anim_landing,
     &anim_toc,
-    &anim_toc2,
+    &anim_firering,
+  };
+AutoSwitchAnimationCollection fairy_dust_auto_switch(10*60*1000, fairy_dust_list);
+
+std::vector<BaseAnimation*> animations_list_=
+	{
+    &fairy_dust_auto_switch,
+    &anim_landing,
+    &anim_toc,
     &anim_firering,
     &anim_confetti,
     &anim_rainbow,
