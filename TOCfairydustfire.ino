@@ -37,9 +37,7 @@
 #define BUTTON_PIN 0 //D3 Button
 #define MOSFET_PIN 5 //switches WS2812 strip power low-side
 
-#define PHOTORESISTOR_AIN A0
-#define PHOTORESISTOR_PIN 17
-#define PHOTORESISTOR_USE_ADC
+#define BATT_VOLTAGE_AIN A0
 
 #define NUM_LEDS (93+27)
 #define BUTTON_DEBOUNCE  500
@@ -112,8 +110,6 @@ void setup()
   pinMode(MOSFET_PIN, OUTPUT);
   digitalWrite(MOSFET_PIN, HIGH);
   pinMode(BUTTON_PIN, INPUT_PULLUP);
-  pinMode(PHOTORESISTOR_AIN, INPUT);
-  pinMode(PHOTORESISTOR_PIN, INPUT);
 #ifdef USE_PJRC_AUDIO
   pinMode(MICROPHONE_AIN, INPUT);
 #endif
@@ -146,18 +142,8 @@ void load_from_EEPROM()
 
 void task_check_lightlevel()
 {
-#ifdef PHOTORESISTOR_USE_ADC
-#ifdef USE_PJRC_AUDIO
-  if (!photoPeak.available())
-    return;
-  light_level = photoPeak.read()*4095;
-#else
-  light_level = analogRead(PHOTORESISTOR_AIN);
-#endif
+  light_level = 0; //TODO: read via SPI
   if (light_level > LIGHT_THRESHOLD)
-#else
-  if (digitalRead(PHOTORESISTOR_PIN) == LOW)
-#endif
   {
     //assume daylight
     if (dark_count_ < LIGHT_DEBOUNCE) {
