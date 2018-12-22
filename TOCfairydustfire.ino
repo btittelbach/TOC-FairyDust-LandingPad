@@ -35,7 +35,7 @@
 // #define LED_PIN 2  //D4
 #define LED_PIN 4 // RX?
 #define BUTTON_PIN 0 //D3 Button
-
+#define MOSFET_PIN 5 //switches WS2812 strip power low-side
 
 #define PHOTORESISTOR_AIN A0
 #define PHOTORESISTOR_PIN 17
@@ -105,14 +105,16 @@ void setup() {
   //wifi / BLE off
   WiFi.mode(WIFI_OFF);
 
-	FastLED.addLeds<WS2812,WS2812_PIN, GRB>(leds_,NUM_LEDS);
-	pinMode(LED_PIN,OUTPUT);
-	digitalWrite(LED_PIN, LOW);
-	pinMode(BUTTON_PIN, INPUT_PULLUP);
-	pinMode(PHOTORESISTOR_AIN, INPUT);
-	pinMode(PHOTORESISTOR_PIN, INPUT);
+  FastLED.addLeds<WS2812,WS2812_PIN, GRB>(leds_,NUM_LEDS);
+  pinMode(LED_PIN,OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+  pinMode(MOSFET_PIN, OUTPUT);
+  digitalWrite(MOSFET_PIN, HIGH);
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  pinMode(PHOTORESISTOR_AIN, INPUT);
+  pinMode(PHOTORESISTOR_PIN, INPUT);
 #ifdef USE_PJRC_AUDIO
-	pinMode(MICROPHONE_AIN, INPUT);
+  pinMode(MICROPHONE_AIN, INPUT);
 #endif
 
 	//init animation
@@ -195,7 +197,10 @@ void task_animate_leds()
   //run current animation
   millis_t delay_ms = animations_list_[animation_current_]->run();
 
-  // Show the leds (only one of which is set to white, from above)
+  //enable or disable LED-strip power
+  digitalWrite(MOSFET_PIN, (areAllPixelsBlack())? LOW : HIGH);
+
+  // Show the leds
   FastLED.show();
   next_run=millis()+delay_ms;
 }
