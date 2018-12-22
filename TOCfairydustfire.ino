@@ -77,7 +77,7 @@ std::vector<BaseAnimation*> fairy_dust_list =
 AutoSwitchAnimationCollection fairy_dust_auto_switch(10*60*1000, fairy_dust_list);
 
 std::vector<BaseAnimation*> animations_list_=
-	{
+  {
     &fairy_dust_auto_switch,
     &anim_landing,
     &anim_toc,
@@ -93,10 +93,11 @@ uint8_t animation_current_= 0;
 
 
 // This function sets up the ledsand tells the controller about them
-void setup() {
+void setup()
+{
 #ifdef USE_PJRC_AUDIO
-	AudioMemory(12);
-	delay(2000);
+  AudioMemory(12);
+  delay(2000);
 #endif
 
   //Serial.begin(115200);
@@ -117,10 +118,10 @@ void setup() {
   pinMode(MICROPHONE_AIN, INPUT);
 #endif
 
-	//init animation
-	EEPROMBEGIN
-	load_from_EEPROM();
-	animations_list_[animation_current_]->init();
+  //init animation
+  EEPROMBEGIN
+  load_from_EEPROM();
+  animations_list_[animation_current_]->init();
 }
 
 
@@ -244,9 +245,9 @@ void task_heartbeat()
 }
 
 void loop() {
-   task_heartbeat();
-   task_check_button();
-   //task_check_lightlevel();
-   //task_sample_mic();
-   task_animate_leds();
+  task_heartbeat();
+  task_check_button();
+  //task_check_lightlevel();
+  //task_sample_mic();
+  task_animate_leds();
 }
