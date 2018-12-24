@@ -152,12 +152,12 @@ void task_check_battery()
 
   next_check=millis()+1000*20;
 
-  //full charge with 4.2V at about 930 (out of 1024)
-  //empty with 2.85V at about 650 (out of 1024)
+  //full charge with 4.2V at about 990 (out of 1024)
+  //empty with 2.85V at about 655 (out of 1024)
   //battery charge thus ranges from 0 .. 255 to indicate charge
-  uint16_t const batt_empty = 650;
-  uint16_t const esp8266_minimum_operating_voltage = 680; //3.0V
-  uint16_t const batt_full = 930;
+  uint16_t const batt_empty = 655;
+  uint16_t const esp8266_minimum_operating_voltage = 702; //3.0V
+  uint16_t const batt_full = 990;
   uint16_t adc_reading = analogRead(BATTERY_TEST_AIN);
   uint16_t batt_charge_byte = min(0xff,(max(batt_empty,adc_reading)-batt_empty) * 0xff / (batt_full-batt_empty));
   anim_battery_indicator.setBatteryChargeLevel0to255(batt_charge_byte);
