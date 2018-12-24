@@ -283,6 +283,7 @@ void task_heartbeat()
 void loop() {
   task_heartbeat();
   task_check_button();
+  task_check_battery();
   //task_check_lightlevel();
   //task_sample_mic();
   task_animate_leds();
