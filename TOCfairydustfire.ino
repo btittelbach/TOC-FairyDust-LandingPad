@@ -145,19 +145,21 @@ void load_from_EEPROM()
 void task_check_battery()
 {
   static millis_t next_check=0;
+  static uint8_t tcb_last_animation=animation_current_;
 
   //ignore overflow for now, as the only thing that happens that we check all the time until 20s have passed.
-  if (millis() < next_check)
+  if (millis() < next_check && tcb_last_animation == animation_current_)
     return;
 
-  next_check=millis()+1000*20;
+  next_check=millis()+1000*10;
+  tcb_last_animation=animation_current_;
 
-  //full charge with 4.2V at about 990 (out of 1024)
+  //full charge with 4.19V at about 994 (out of 1024)
   //empty with 2.85V at about 655 (out of 1024)
   //battery charge thus ranges from 0 .. 255 to indicate charge
   uint16_t const batt_empty = 655;
   uint16_t const esp8266_minimum_operating_voltage = 702; //3.0V
-  uint16_t const batt_full = 990;
+  uint16_t const batt_full = 994;
   uint16_t adc_reading = analogRead(BATTERY_TEST_AIN);
   uint16_t batt_charge_byte = min(0xff,(max(batt_empty,adc_reading)-batt_empty) * 0xff / (batt_full-batt_empty));
   anim_battery_indicator.setBatteryChargeLevel0to255(batt_charge_byte);
